@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter this site at your own risk</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <!-- Initial content goes here -->
+  </div>
+
+  <script>
+    const content = document.getElementById('content');
+
+    // First page
+    content.innerHTML = `
+      <h1>Enter this site at your own risk</h1>
+      <button onclick="showSecondPage()">Enter</button>
+    `;
+
+    // Second page
+    function showSecondPage() {
+      content.innerHTML = `
+        <h1>Are you sure?</h1>
+        <button onclick="showFinalPage()">Yes</button>
+        <button onclick="showFinalPage()">Not no</button>
+      `;
+    }
+
+    // Final page
+    function showFinalPage() {
+      content.innerHTML = `
+        <h1>Heyyyyy</h1>
+        <img src="./YOUR_IMAGE_NAME.png" alt="Heyyyyy">
+      `;
+    }
+  </script>
+</body>
+</html>
